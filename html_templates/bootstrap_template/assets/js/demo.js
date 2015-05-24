@@ -14,25 +14,7 @@ function loadNav(tab) {
                '<li><a href="components.html">小型组件</a></li>'+
                '<li><a href="class.html">辅助类</a></li>'+
                '<li><a href="glyphicons.html">字体图标</a></li>'+
-               '<li class="dropdown">'+
-                  '<a class="dropdown-toggle" data-toggle="dropdown" href="javascriptsList.html">'+
-                     '插件 <span class="caret"></span>'+
-                  '</a>'+
-                  '<ul class="dropdown-menu">'+
-                     '<li><a href="javascripts.html">概览</a></li>'+
-                     '<li><a href="modal.html">modal</a></li>'+
-                     '<li><a href="dropdown.html">下拉菜单dropdown</a></li>'+
-                     '<li><a href="scrollspy.html">滚动监听（Scrollspy）插件</a></li>'+
-                     '<li><a href="tab.html">标签页（Tab）插件</a></li>'+
-                     '<li><a href="#">工具提示（Tooltip）插件</a></li>'+
-                     '<li><a href="popover.html">弹出框（Popover）插件</a></li>'+
-                     '<li><a href="#">警告框（Alert）插件</a></li>'+
-                     '<li><a href="#">按钮（Button）插件</a></li>'+
-                     '<li><a href="#">折叠（Collapse）插件</a></li>'+
-                     '<li><a href="carousel.html">轮播（Carousel）插件</a></li>'+
-                     '<li><a href="#">附加导航（Affix）插件</a></li>'+
-                  '</ul>'+
-                '</li>'+
+               '<li><a href="javascripts.html">插件</a></li>'+
                 '<li class="dropdown">'+
                   '<a class="dropdown-toggle" data-toggle="dropdown" href="#">'+
                      '实例页面 <span class="caret"></span>'+
