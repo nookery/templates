@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,in-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <style type="text/css">
+    .row {
+      margin-bottom: 20px;
+    }
+    .row .row {
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+    [class*="col-"] {
+      padding-top:15px;
+      padding-bottom: 15px;
+      background-color: #eee;
+      background-color: rgba(86,61,124,.15);
+      border: 1px solid #ddd;
+      border: 1px solid rgba(86,61,124,.2);
+    }
+  </style>
+  <style type="text/css">
+    body{
+      padding-top: 50px;
+    }
+    h3 {
+      color: blue;
+    }
+  </style>
+</head>
+<body style="padding: 50px">
+  <!-- 一般情况下需要包裹一个容器 -->
+  <!-- 行必须放置在 .container class 内，以便获得适当的对齐（alignment）和内边距（padding） -->
+  <!-- 使用行来创建列的水平组 -->
+  <!-- 内容应该放置在列内，且唯有列可以是行的直接子元素 -->
+  <div class="container">
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    </nav>
+    <h3>Bootstrap 网格系统（Grid System）的工作原理</h3>
+    <ul> <li>行必须放置在 <b>.container</b> class 内，以便获得适当的对齐（alignment）和内边距（padding）。</li> <li>使用行来创建列的水平组。</li> <li>内容应该放置在列内，且唯有列可以是行的直接子元素。</li> <li>预定义的网格类，比如 <b>.row</b> 和 <b>.col-xs-4</b>，可用于快速创建网格布局。LESS 混合类可用于更多语义布局。</li> <li>列通过内边距（padding）来创建列内容之间的间隙。该内边距是通过 <b>.rows</b> 上的外边距（margin）取负，表示第一列和最后一列的行偏移。</li> <li>网格系统是通过指定您想要横跨的十二个可用的列来创建的。例如，要创建三个相等的列，则使用三个 <b>.col-xs-4</b>。</li> </ul>
+    <h3>每行最多12个</h3>
+    <div class="row">
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">.col-md-3</div>
+      <div class="col-md-3">.col-md-3</div>
+      <div class="col-md-3">.col-md-3</div>
+      <div class="col-md-3">.col-md-3</div>
+    </div>
+    <h3>溢出</h3>
+    <div class="row">
+      <div class="col-md-3">.col-md-3.col-md-3.col-md-3.col-md-3.col-md-3.col-md-3.col-md-3</div>
+      <div class="col-md-3">.col-md-3</div>
+      <div class="col-md-3">.col-md-3</div>
+      <div class="col-md-3">.col-md-3</div>
+    </div>
+    <h3>偏移</h3>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1">.col-md-3 .col-md-offset-1</div>
+    </div>
+    <h3>嵌套</h3>
+    <div class="row">
+      <div class="col-md-9">
+        one
+        <div class="row">
+          <div class="col-md-6">
+            one
+          </div>
+          <div class="col-md-3">
+            twe
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>排序前</h3>
+    <div class="row">
+      <div class="col-md-9">col-md-9</div>
+      <div class="col-md-3">col-md-3</div>
+    </div>
+    <h3>排序后</h3>
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">col-md-9</div>
+      <div class="col-md-3 col-md-pull-9">col-md-3</div>
+    </div>
+  </div>
+</body>
+</html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script>
+  loadNav('grid');
+</script>

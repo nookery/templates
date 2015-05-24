@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2012-02-21 v1.0.0
+
+# 直接缓存的文件
+CACHE:
+assets/
+NETWORK:
+*
+FALLBACK:
+/html/ /html/html_templates/bootstrap_template/index.html

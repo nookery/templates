@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,in-scale=1">
+  <link rel="stylesheet" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <style type="text/css">
+    body{
+      padding-top: 50px;
+    }</style>
+    <style type="text/css">
+    body{
+      padding-top: 50px;
+    }
+    h3 {
+      color: blue;
+    }
+    h2 {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    </nav>
+    <h2>Bootstrap popover插件</h2>
+    <p>弹出框（Popover）与工具提示（Tooltip）类似，提供了一个扩展的视图。如需激活弹出框，用户只需把鼠标悬停在元素上即可。弹出框的内容完全可使用 Bootstrap 数据 API（Bootstrap Data API）来填充。该方法依赖于工具提示（tooltip）。</p>
+    <h3>用法</h3>
+    <ul class="list"> <li><b>通过 data 属性</b>：如需添加一个弹出框（popover），只需向一个锚/按钮标签添加 <b>data-toggle="popover"</b> 即可。锚的 title 即为弹出框（popover）的文本。默认情况下，插件把弹出框（popover）设置在顶部。 <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"popover"</span><span class="pln"> </span><span class="atn">title</span><span class="pun">=</span><span class="atv">"Example popover"</span><span class="tag">&gt;</span><span class="pln">
+   请悬停在我的上面
+</span><span class="tag">&lt;/a&gt;</span></pre> </li> <li><b>通过 JavaScript：</b>通过 JavaScript 启用弹出框（popover）： <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">popover</span><span class="pun">(</span><span class="pln">options</span><span class="pun">)</span></pre> </li>
+    </ul>
+    <p>弹出框（Popover）插件不像之前所讨论的下拉菜单及其他插件那样，它不是纯 CSS 插件。如需使用该插件，您必须使用 jquery 激活它（读取 javascript）。使用下面的脚本来启用页面中的所有的弹出框（popover）： </p>
+    <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> $</span><span class="pun">(</span><span class="str">"[data-toggle='popover']"</span><span class="pun">).</span><span class="pln">popover</span><span class="pun">();</span><span class="pln"> </span><span class="pun">});</span></pre>
+    <h3>实例</h3>
+    <pre class="prettyprint tryit prettyprinted" style="background-image: none;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;title&gt;</span><span class="pln">Bootstrap 实例 - 弹出框（Popover）插件</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/bootstrap/css/bootstrap.min.css"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/scripts/jquery.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/bootstrap/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="pln"> </span><span class="atn">style</span><span class="pun">=</span><span class="atv">"</span><span class="pln">padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100px</span><span class="pln"> </span><span class="lit">50px</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="atv">"</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-default"</span><span class="pln"> </span><span class="atn">title</span><span class="pun">=</span><span class="atv">"Popover title"</span><span class="pln">
+      </span><span class="atn">data-container</span><span class="pun">=</span><span class="atv">"body"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"popover"</span><span class="pln"> </span><span class="atn">data-placement</span><span class="pun">=</span><span class="atv">"left"</span><span class="pln">
+      </span><span class="atn">data-content</span><span class="pun">=</span><span class="atv">"左侧的 Popover 中的一些内容"</span><span class="tag">&gt;</span><span class="pln">
+      左侧的 Popover
+   </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary"</span><span class="pln"> </span><span class="atn">title</span><span class="pun">=</span><span class="atv">"Popover title"</span><span class="pln">
+      </span><span class="atn">data-container</span><span class="pun">=</span><span class="atv">"body"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"popover"</span><span class="pln"> </span><span class="atn">data-placement</span><span class="pun">=</span><span class="atv">"top"</span><span class="pln">
+      </span><span class="atn">data-content</span><span class="pun">=</span><span class="atv">"顶部的 Popover 中的一些内容"</span><span class="tag">&gt;</span><span class="pln">
+      顶部的 Popover
+   </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-success"</span><span class="pln"> </span><span class="atn">title</span><span class="pun">=</span><span class="atv">"Popover title"</span><span class="pln">
+      </span><span class="atn">data-container</span><span class="pun">=</span><span class="atv">"body"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"popover"</span><span class="pln"> </span><span class="atn">data-placement</span><span class="pun">=</span><span class="atv">"bottom"</span><span class="pln">
+      </span><span class="atn">data-content</span><span class="pun">=</span><span class="atv">"底部的 Popover 中的一些内容"</span><span class="tag">&gt;</span><span class="pln">
+      底部的 Popover
+   </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-warning"</span><span class="pln"> </span><span class="atn">title</span><span class="pun">=</span><span class="atv">"Popover title"</span><span class="pln">
+      </span><span class="atn">data-container</span><span class="pun">=</span><span class="atv">"body"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"popover"</span><span class="pln"> </span><span class="atn">data-placement</span><span class="pun">=</span><span class="atv">"right"</span><span class="pln">
+      </span><span class="atn">data-content</span><span class="pun">=</span><span class="atv">"右侧的 Popover 中的一些内容"</span><span class="tag">&gt;</span><span class="pln">
+      右侧的 Popover
+   </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;script&gt;</span><span class="pln">$</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln"> $</span><span class="pun">(</span><span class="str">"[data-toggle='popover']"</span><span class="pun">).</span><span class="pln">popover</span><span class="pun">();</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+   </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+  <div class="container" style="padding: 100px 50px 10px;" >
+    <button type="button" class="btn btn-default" title="Popover title"
+      data-container="body" data-toggle="popover" data-placement="left"
+      data-content="左侧的 Popover 中的一些内容">
+      左侧的 Popover
+    </button>
+    <button type="button" class="btn btn-primary" title="Popover title"
+      data-container="body" data-toggle="popover" data-placement="top"
+      data-content="顶部的 Popover 中的一些内容">
+      顶部的 Popover
+    </button>
+    <button type="button" class="btn btn-success" title="Popover title"
+      data-container="body" data-toggle="popover" data-placement="bottom"
+      data-content="底部的 Popover 中的一些内容">
+      底部的 Popover
+    </button>
+    <button type="button" class="btn btn-warning" title="Popover title"
+      data-container="body" data-toggle="popover" data-placement="right"
+      data-content="右侧的 Popover 中的一些内容">
+      右侧的 Popover
+    </button>
+  </div>
+
+  </div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+  <script src="assets/js/demo.js"></script>
+  <script>$(function ()
+      { $("[data-toggle='popover']").popover();
+      });
+  </script>
+  <script>
+    loadNav('javascriptsList');
+  </script>
+</body>
+</html>

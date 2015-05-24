@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,in-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <style type="text/css">
+    body{
+      padding-top: 50px;
+    }</style>
+    <style type="text/css">
+    body{
+      padding-top: 50px;
+    }
+    h3 {
+      color: blue;
+    }
+    h2 {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    </nav>
+    <h2>轮播（Carousel）插件</h2>
+    <p>内容可以是图像、内嵌框架、视频或者其他您想要放置的任何类型的内容</p>
+    <h3><a href="examples/carousel.html" target="_blank">实例</a></h3>
+    <h3>用法</h3>
+    <ul class="list"> <li><b>通过 data 属性</b>：使用 data 属性可以很容易控制轮播（Carousel）的位置。 <ul class="list"> <li>属性 <b>data-slide</b> 接受关键字 <i>prev</i> 或 <i>next</i>，用来改变幻灯片相对于当前位置的位置。</li> <li>使用 <b>data-slide-to</b> 来向轮播床底一个原始滑动索引，<b>data-slide-to="2"</b> 将把滑块移动到一个特定的索引，索引从 0 开始计数。</li> <li><b>data-ride="carousel"</b> 属性用于标记轮播在页面加载时就开始动画播放。</li> </ul> </li> <li><b>通过 JavaScript</b>：轮播（Carousel）可通过 JavaScript 手动调用，如下所示： <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'.carousel'</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">()</span></pre></li> <li>实例</li></ul>
+    <pre class="prettyprint tryit prettyprinted" style="background-image: none;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;title&gt;</span><span class="pln">Bootstrap 实例 - 简单的轮播（Carousel）插件</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/bootstrap/css/bootstrap.min.css"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/scripts/jquery.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/bootstrap/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myCarousel"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel slide"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）指标 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;ol</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-indicators"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"active"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/ol&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）项目 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-inner"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item active"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide1.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"First slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide2.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Second slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide3.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Third slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）导航 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control left"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"prev"</span><span class="tag">&gt;</span><span class="pln">&amp;lsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control right"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"next"</span><span class="tag">&gt;</span><span class="pln">&amp;rsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+    <div id="myCarousel1" class="carousel slide">
+       <!-- 轮播（Carousel）指标 -->
+       <ol class="carousel-indicators">
+          <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel1" data-slide-to="1"></li>
+          <li data-target="#myCarousel1" data-slide-to="2"></li>
+       </ol>
+       <!-- 轮播（Carousel）项目 -->
+       <div class="carousel-inner">
+          <div class="item active">
+             <img src="assets/images/slide1.png" sualt="First slide">
+          </div>
+          <div class="item">
+             <img src="assets/images/slide2.png" alt="Second slide">
+          </div>
+          <div class="item">
+             <img src="assets/images/slide3.png" alt="Third slide">
+          </div>
+       </div>
+       <!-- 轮播（Carousel）导航 -->
+       <a class="carousel-control left" href="#myCarousel1"
+          data-slide="prev">&lsaquo;</a>
+       <a class="carousel-control right" href="#myCarousel1"
+          data-slide="next">&rsaquo;</a>
+    </div>
+    <hr>
+    <h3>可选的标题</h3>
+    <pre class="prettyprint tryit prettyprinted" style="background-image: none;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;title&gt;</span><span class="pln">Bootstrap 实例 - 轮播（Carousel）插件的标题</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/bootstrap/css/bootstrap.min.css"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/scripts/jquery.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/bootstrap/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myCarousel"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel slide"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）指标 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;ol</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-indicators"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"active"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/ol&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）项目 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-inner"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item active"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide1.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"First slide"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-caption"</span><span class="tag">&gt;</span><span class="pln">标题 1</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide2.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Second slide"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-caption"</span><span class="tag">&gt;</span><span class="pln">标题 2</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide3.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Third slide"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-caption"</span><span class="tag">&gt;</span><span class="pln">标题 3</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）导航 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control left"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"prev"</span><span class="tag">&gt;</span><span class="pln">&amp;lsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control right"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"next"</span><span class="tag">&gt;</span><span class="pln">&amp;rsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+    <div id="myCarousel2" class="carousel slide">
+       <!-- 轮播（Carousel）指标 -->
+       <ol class="carousel-indicators">
+          <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel2" data-slide-to="1"></li>
+          <li data-target="#myCarousel2" data-slide-to="2"></li>
+       </ol>
+       <!-- 轮播（Carousel）项目 -->
+       <div class="carousel-inner">
+          <div class="item active">
+             <img src="assets/images/slide1.png" height="500" width="900" alt="First slide">
+             <div class="carousel-caption">标题 1</div>
+          </div>
+          <div class="item">
+             <img src="assets/images/slide2.png" alt="Second slide">
+             <div class="carousel-caption">标题 2</div>
+          </div>
+          <div class="item">
+             <img src="assets/images/slide3.png" alt="Third slide">
+             <div class="carousel-caption">标题 3</div>
+          </div>
+       </div>
+       <!-- 轮播（Carousel）导航 -->
+       <a class="carousel-control left" href="#myCarousel2"
+          data-slide="prev">&lsaquo;</a>
+       <a class="carousel-control right" href="#myCarousel2"
+          data-slide="next">&rsaquo;</a>
+    </div>
+    <hr>
+    <h3>选项</h3>
+    <p>有一些选项是通过 data 属性或 JavaScript 来传递的。下表列出了这些选项：</p>
+    <table class="reference notranslate table table-bordered"> <tbody><tr><th>选项名称</th><th>类型/默认值</th><th>Data 属性名称</th><th>描述</th></tr> <tr><td>interval</td><td>number<br> <i>默认值：5000</i></td><td>data-interval</td><td>自动循环每个项目之间延迟的时间量。如果为 false，轮播将不会自动循环。</td></tr> <tr><td>pause</td><td>string<br> <i>默认值："hover"</i></td><td>data-pause</td><td>鼠标进入时暂停轮播循环，鼠标离开时恢复轮播循环。</td></tr> <tr><td>wrap</td><td>boolean<br> <i>默认值：true</i></td><td>data-wrap</td><td>轮播是否连续循环。</td></tr> </tbody></table>
+    <h3>方法</h3>
+    <table class="reference notranslate table table-bordered"> <tbody><tr><th>方法</th><th>描述</th><th>实例</th></tr> <tr><td>.carousel(options)</td><td>初始化轮播为可选的 options 对象，并开始循环项目。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">({</span><span class="pln">
+  interval</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2000</span><span class="pln">
+   </span><span class="pun">})</span></pre></td></tr> <tr><td>.carousel('cycle')</td><td>从左到右循环轮播项目。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'cycle'</span><span class="pun">)</span></pre></td></tr> <tr><td>.carousel('pause')</td><td>停止轮播循环项目。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">)..</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'pause'</span><span class="pun">)</span></pre></td></tr> <tr><td>.carousel(number)</td><td>循环轮播到某个特定的帧（从 0 开始计数，与数组类似）。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="pln">number</span><span class="pun">)</span></pre></td></tr> <tr><td>.carousel('prev')</td><td>循环轮播到上一个项目。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'prev'</span><span class="pun">)</span></pre></td></tr> <tr><td>.carousel('next')</td><td>循环轮播到下一个项目。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'next'</span><span class="pun">)</span></pre></td></tr> </tbody></table>
+   <pre class="prettyprint tryit prettyprinted" style="background-image: none;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;title&gt;</span><span class="pln">Bootstrap 实例 - 轮播（Carousel）插件方法</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/bootstrap/css/bootstrap.min.css"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/scripts/jquery.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/bootstrap/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myCarousel"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel slide"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）指标 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;ol</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-indicators"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln">
+         </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"active"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/ol&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）项目 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-inner"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item active"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide1.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"First slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide2.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Second slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide3.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Third slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）导航 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control left"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"prev"</span><span class="tag">&gt;</span><span class="pln">&amp;lsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control right"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"next"</span><span class="tag">&gt;</span><span class="pln">&amp;rsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 控制按钮 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">style</span><span class="pun">=</span><span class="atv">"</span><span class="pln">text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln">center</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn start-slide"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Start"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn pause-slide"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Pause"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn prev-slide"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Previous Slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn next-slide"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Next Slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn slide-one"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Slide 1"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn slide-two"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Slide 2"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn slide-three"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Slide 3"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;script&gt;</span><span class="pln">
+   $</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+      </span><span class="com">// 初始化轮播</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".start-slide"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'cycle'</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+      </span><span class="com">// 停止轮播</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".pause-slide"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'pause'</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+      </span><span class="com">// 循环轮播到上一个项目</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".prev-slide"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'prev'</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+      </span><span class="com">// 循环轮播到下一个项目</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".next-slide"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="str">'next'</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+      </span><span class="com">// 循环轮播到某个特定的帧 </span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".slide-one"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".slide-two"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">".slide-three"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+         $</span><span class="pun">(</span><span class="str">"#myCarousel"</span><span class="pun">).</span><span class="pln">carousel</span><span class="pun">(</span><span class="lit">2</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+   </span><span class="pun">});</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span><span class="pln">
+
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+    <div id="myCarousel3" class="carousel slide">
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0"
+           class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+        <div class="item active">
+           <img src="assets/images/slide1.png" height="500" width="900" alt="First slide">
+        </div>
+        <div class="item">
+           <img src="assets/images/slide2.png" height="500" width="900" alt="Second slide">
+        </div>
+        <div class="item">
+           <img src="assets/images/slide3.png" height="500" width="900" alt="Third slide">
+        </div>
+      </div>
+      <!-- 轮播（Carousel）导航 -->
+      <a class="carousel-control left" href="#myCarousel3"
+        data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel3"
+        data-slide="next">&rsaquo;</a>
+      <!-- 控制按钮 -->
+      <div style="text-align:center;">
+        <input type="button" class="btn start-slide" value="Start">
+        <input type="button" class="btn pause-slide" value="Pause">
+        <input type="button" class="btn prev-slide" value="Previous Slide">
+        <input type="button" class="btn next-slide" value="Next Slide">
+        <input type="button" class="btn slide-one" value="Slide 1">
+        <input type="button" class="btn slide-two" value="Slide 2">
+        <input type="button" class="btn slide-three" value="Slide 3">
+      </div>
+    </div>
+   <hr>
+   <h3>事件</h3>
+   <p>下表列出了轮播（Carousel）插件中要用到的事件。这些事件可在函数中当钩子使用。</p>
+   <table class="reference notranslate table table-bordered"> <tbody><tr><th>事件</th><th>描述</th><th>实例</th></tr> <tr><td>slide.bs.carousel</td><td>当调用 slide 实例方法时立即触发该事件。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'slide.bs.carousel'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="com">// 执行一些动作...</span><span class="pln">
+   </span><span class="pun">})</span></pre></td></tr> <tr><td>slid.bs.carousel</td><td>当轮播完成幻灯片过渡效果时触发该事件。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'slid.bs.carousel'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="com">// 执行一些动作...</span><span class="pln">
+   </span><span class="pun">})</span></pre></td></tr> </tbody></table>
+   <pre class="prettyprint tryit prettyprinted" style="background-image: none;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;title&gt;</span><span class="pln">Bootstrap 实例 - 轮播（Carousel）插件事件</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/bootstrap/css/bootstrap.min.css"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/scripts/jquery.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/bootstrap/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myCarousel"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel slide"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）指标 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;ol</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-indicators"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln">
+         </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"active"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln"> </span><span class="atn">data-slide-to</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;&lt;/li&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/ol&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）项目 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-inner"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item active"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide1.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"First slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide2.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Second slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"item"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/wp-content/uploads/2014/07/slide3.png"</span><span class="pln"> </span><span class="atn">alt</span><span class="pun">=</span><span class="atv">"Third slide"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+   </span><span class="com">&lt;!-- 轮播（Carousel）导航 --&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control left"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"prev"</span><span class="tag">&gt;</span><span class="pln">&amp;lsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+   </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"carousel-control right"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#myCarousel"</span><span class="pln">
+      </span><span class="atn">data-slide</span><span class="pun">=</span><span class="atv">"next"</span><span class="tag">&gt;</span><span class="pln">&amp;rsaquo;</span><span class="tag">&lt;/a&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;script&gt;</span><span class="pln">
+   $</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+      $</span><span class="pun">(</span><span class="str">'#myCarousel'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'slide.bs.carousel'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         alert</span><span class="pun">(</span><span class="str">"当调用 slide 实例方法时立即触发该事件。"</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+   </span><span class="pun">});</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+    <div id="myCarousel4" class="carousel slide">
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel4" data-slide-to="0"
+           class="active"></li>
+        <li data-target="#myCarousel4" data-slide-to="1"></li>
+        <li data-target="#myCarousel4" data-slide-to="2"></li>
+      </ol>
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+        <div class="item active">
+           <img src="assets/images/slide1.png" alt="First slide">
+        </div>
+        <div class="item">
+           <img src="assets/images/slide2.png" alt="Second slide">
+        </div>
+        <div class="item">
+           <img src="assets/images/slide3.png" alt="Third slide">
+        </div>
+      </div>
+      <!-- 轮播（Carousel）导航 -->
+      <a class="carousel-control left" href="#myCarousel4"
+        data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel4"
+        data-slide="next">&rsaquo;</a>
+    </div>
+   <br><br><br><br><br><br><br><br><br>
+  </div>
+</body>
+</html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script>
+  $(function(){
+     // 初始化轮播
+     $(".start-slide").click(function(){
+        $("#myCarousel3").carousel('cycle');
+     });
+     // 停止轮播
+     $(".pause-slide").click(function(){
+        $("#myCarousel3").carousel('pause');
+     });
+     // 循环轮播到上一个项目
+     $(".prev-slide").click(function(){
+        $("#myCarousel3").carousel('prev');
+     });
+     // 循环轮播到下一个项目
+     $(".next-slide").click(function(){
+        $("#myCarousel3").carousel('next');
+     });
+     // 循环轮播到某个特定的帧
+     $(".slide-one").click(function(){
+        $("#myCarousel3").carousel(0);
+     });
+     $(".slide-two").click(function(){
+        $("#myCarousel3").carousel(1);
+     });
+     $(".slide-three").click(function(){
+        $("#myCarousel3").carousel(2);
+     });
+  });
+</script>
+<script>
+  $(function(){
+     $('#myCarousel4').on('slide.bs.carousel', function () {
+        //alert("当调用 slide 实例方法时立即触发该事件。");
+     });
+  });
+</script>
+<script>
+  loadNav('javascriptsList');
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,in-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <style type="text/css">
+    body{
+      padding-top: 50px;
+    }</style>
+    <style type="text/css">
+    body{
+      padding-top: 50px;
+    }
+    h3 {
+      color: blue;
+    }
+    h2 {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    </nav>
+    <h2>概览</h2>
+    <p>Bootstrap 自带 12 种 jQuery 插件。利用 Bootstrap 数据 API（Bootstrap Data API），大部分的插件可以在不编写任何代码的情况被触发</p>
+    <ul>
+      <li><a href="modal.html">modal</a></li>
+      <li><a href="dropdown.html">下拉菜单</a></li>
+      <li><a href="scrollspy.html">滚动监听scrollspy</a></li>
+      <li><a href="tab.html">标签页tab</a></li>
+      <li><a href="tooltip.html">工具提示tooltip</a></li>
+      <li><a href="popover.html">弹出框popover</a></li>
+      <li><a href="alert.html">警告框alert</a></li>
+      <li><a href="button.html">按钮button</a></li>
+      <li><a href="collapse.html">折叠</a></li>
+      <li><a href="carousel.html">轮播</a></li>
+      <li><a href="affix.html">附加导航</a></li>
+    </ul>
+    <hr>
+    <h3>data 属性</h3>
+    <ul class="list">
+      <li>通过 data 属性 API 就能使用所有的 Bootstrap 插件，无需写一行 JavaScript 代码。这是 Bootstrap 中的一等 API，也应是首选方式。
+      </li>
+      <li>在某些情况下可能需要将此功能关闭：解除以 <i>data-api</i> 为命名空间并绑定在文档上的事件
+      <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">off</span><span class="pun">(</span><span class="str">'.data-api'</span><span class="pun">)</span></pre>
+      </li>
+      <li>如需关闭一个特定的插件，只需要在 data-api 命名空间前加上该插件的名称作为命名空间即可
+      <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">off</span><span class="pun">(</span><span class="str">'.alert.data-api'</span><span class="pun">)</span></pre>
+      </li>
+    </ul>
+    <hr>
+    <h3>编程方式的 API</h3>
+    <p>我们为所有 Bootstrap 插件提供了纯 JavaScript 方式的 API。所有公开的 API 都是支持单独或链式调用方式，并且返回其所操作的元素集合（注：和jQuery的调用形式一致）。例如：</p>
+    <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">".btn.danger"</span><span class="pun">).</span><span class="pln">button</span><span class="pun">(</span><span class="str">"toggle"</span><span class="pun">).</span><span class="pln">addClass</span><span class="pun">(</span><span class="str">"fat"</span><span class="pun">)</span></pre>
+    <p>所有的方法都可以接受一个可选的选项对象作为参数，或者一个代表特定方法的字符串，或者不带任何参数（这种情况下，将会初始化插件为默认行为），如下所示：</p>
+<pre class="prettyprint prettyprinted" style="background-image: none;"><span class="com">// 初始化为默认行为</span><span class="pln">
+$</span><span class="pun">(</span><span class="str">"#myModal"</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">()</span><span class="pln">
+ </span><span class="com">// 初始化为不支持键盘               </span><span class="pln">
+$</span><span class="pun">(</span><span class="str">"#myModal"</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">({</span><span class="pln"> keyboard</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln"> </span><span class="pun">})</span><span class="pln">
+</span><span class="com">// 初始化并立即调用 show</span><span class="pln">
+$</span><span class="pun">(</span><span class="str">"#myModal"</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">(</span><span class="str">'show'</span><span class="pun">)</span><span class="pln"></span></pre>
+    <p>每个插件在 <b>Constructor</b> 属性上也暴露了其原始的构造函数：<i>$.fn.popover.Constructor</i>。如果您想获取某个特定插件的实例，可以直接通过页面元素获取：</p>
+    <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'[rel=popover]'</span><span class="pun">).</span><span class="pln">data</span><span class="pun">(</span><span class="str">'popover'</span><span class="pun">).</span></pre>
+    <hr>
+    <h3>避免命名空间冲突</h3>
+    <p>某些时候 Bootstrap 插件可能需要与其他 UI 框架一起使用。在这种情况下，可能会发生命名空间冲突。如果不幸发生了这种情况，你可以通过调用插件的 .noConflict 方法恢复其原始值。</p>
+    <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="com">// 返回 $.fn.button 之前所赋的值</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> bootstrapButton </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">.</span><span class="pln">fn</span><span class="pun">.</span><span class="pln">button</span><span class="pun">.</span><span class="pln">noConflict</span><span class="pun">()</span><span class="pln">
+    </span><span class="com">// 为 $().bootstrapBtn 赋予 Bootstrap 功能                 </span><span class="pln">
+    $</span><span class="pun">.</span><span class="pln">fn</span><span class="pun">.</span><span class="pln">bootstrapBtn </span><span class="pun">=</span><span class="pln"> bootstrapButton            </span>
+    </pre>
+    <hr>
+    <h3>事件</h3>
+    <p>Bootstrap 为大多数插件的独特行为提供了自定义事件。一般来说，这些事件有两种形式：</p>
+    <ul class="list"> <li><b>动词不定式</b>：这会在事件开始时被触发。例如 <i>ex: show</i>。动词不定式事件提供了 <i>preventDefault</i> 功能。这使得在事件开始前可以停止操作的执行。 <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#myModal'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'show.bs.modal'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"></span><span class="com">
+// 阻止模态框的显示</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">preventDefault</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">})</span></pre> </li> <li><b>过去分词形式</b>：这会在动作执行完毕之后被触发。例如 <i>ex: shown</i>。</li>
+    </ul>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+</body>
+</html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script>
+  loadNav('javascriptsList');
+</script>

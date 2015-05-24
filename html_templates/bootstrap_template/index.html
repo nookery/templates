@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,in-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <style type="text/css">
+    body{
+      padding-top: 50px;
+    }
+    h3 {
+      color: blue;
+    }
+  </style>
+</head>
+<body style="padding: 50px">
+  <div class="container">
+    <h3>导航栏</h3>
+    <pre>
+      &lt;nav class="navbar navbar-default" role="navigation"&gt;
+        &lt;div class="navbar-header"&gt;
+          &lt;a class="navbar-brand" href="#"&gt;W3Cschool&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;ul class="nav navbar-nav"&gt;
+             &lt;li class="active"&gt;&lt;a href="#"&gt;iOS&lt;/a&gt;&lt;/li&gt;
+             &lt;li&gt;&lt;a href="#"&gt;SVN&lt;/a&gt;&lt;/li&gt;
+             &lt;li class="dropdown"&gt;
+                &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;
+                   Java
+                   &lt;b class="caret"&gt;&lt;/b&gt;
+                &lt;/a&gt;
+                &lt;ul class="dropdown-menu"&gt;
+                   &lt;li&gt;&lt;a href="#"&gt;jmeter&lt;/a&gt;&lt;/li&gt;
+                   &lt;li&gt;&lt;a href="#"&gt;EJB&lt;/a&gt;&lt;/li&gt;
+                   &lt;li&gt;&lt;a href="#"&gt;Jasper Report&lt;/a&gt;&lt;/li&gt;
+                   &lt;li class="divider"&gt;&lt;/li&gt;
+                   &lt;li&gt;&lt;a href="#"&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+                   &lt;li class="divider"&gt;&lt;/li&gt;
+                   &lt;li&gt;&lt;a href="#"&gt;另一个分离的链接&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul>
+             &lt;/li>
+          &lt;/ul>
+        &lt;/div>
+      &lt;/nav>
+    </pre>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">W3Cschool</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+           <li class="active"><a href="#">iOS</a></li>
+           <li><a href="#">SVN</a></li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 Java
+                 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                 <li><a href="#">jmeter</a></li>
+                 <li><a href="#">EJB</a></li>
+                 <li><a href="#">Jasper Report</a></li>
+                 <li class="divider"></li>
+                 <li><a href="#">分离的链接</a></li>
+                 <li class="divider"></li>
+                 <li><a href="#">另一个分离的链接</a></li>
+              </ul>
+           </li>
+        </ul>
+      </div>
+    </nav>
+    <hr>
+    <h3>响应式导航栏</h3>
+    <p>为了给导航栏添加响应式特性，您要折叠的内容必须包裹在带有 classes <b>.collapse、.navbar-collapse</b> 的 &lt;div&gt; 中。折叠起来的导航栏实际上是一个带有 class <b>.navbar-toggle</b> 及两个 data- 元素的按钮。第一个是 <b>data-toggle</b>，用于告诉 JavaScript 需要对按钮做什么，第二个是 <b>data-target</b>，指示要切换到哪一个元素。三个带有 class <b>.icon-bar</b> 的 &lt;span&gt; 创建所谓的汉堡按钮。这些会切换为 <b>.nav-collapse</b> &lt;div&gt; 中的元素。为了实现以上这些功能，您必须包含 Bootstrap 折叠（Collapse）插件。</p>
+    <pre>
+      &lt;nav class="navbar navbar-default" role="navigation"&gt;
+         &lt;div class="navbar-header"&gt;
+            &lt;button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#example-navbar-collapse"&gt;
+               &lt;span class="sr-only"&gt;切换导航&lt;/span&gt;
+               &lt;span class="icon-bar"&gt;&lt;/span&gt;
+               &lt;span class="icon-bar"&gt;&lt;/span&gt;
+               &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;a class="navbar-brand" href="#"&gt;W3Cschool&lt;/a&gt;
+         &lt;/div&gt;
+         &lt;div class="collapse navbar-collapse" id="example-navbar-collapse"&gt;
+            &lt;ul class="nav navbar-nav"&gt;
+               &lt;li class="active"&gt;&lt;a href="#"&gt;iOS&lt;/a&gt;&lt;/li&gt;
+               &lt;li&gt;&lt;a href="#"&gt;SVN&lt;/a&gt;&lt;/li&gt;
+
+            &lt;/ul&gt;
+         &lt;/div&gt;
+      &lt;/nav&gt;
+    </pre>
+    <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+             data-target="#example-navbar-collapse">
+             <span class="sr-only">切换导航</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">W3Cschool</a>
+       </div>
+       <div class="collapse navbar-collapse" id="example-navbar-collapse">
+          <ul class="nav navbar-nav">
+             <li class="active"><a href="#">iOS</a></li>
+             <li><a href="#">SVN</a></li>
+
+          </ul>
+       </div>
+    </nav>
+    <hr>
+    <h3>导航栏中的表单</h3>
+    <p>导航栏中的表单不是使用 <a href="bootstrap-forms.html" target="_blank">Bootstrap 表单</a> 章节中所讲到的默认的 class，它是使用 <b>.navbar-form</b> class。这确保了表单适当的垂直对齐和在较窄的视口中折叠的行为。使用对齐方式选项（这将在组件对齐方式部分进行详细讲解）来决定导航栏中的内容放置在哪里。</p>
+    <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="#">W3Cschool</a>
+       </div>
+       <div>
+          <form class="navbar-form navbar-left" role="search">
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+             </div>
+             <button type="submit" class="btn btn-default">提交</button>
+          </form>
+       </div>
+    </nav>
+    <hr>
+    <h3>导航栏中的按钮</h3>
+    <p>您可以使用 class <b>.navbar-btn</b> 向不在 &lt;form&gt; 中的 &lt;button&gt; 元素添加按钮，按钮在导航栏上垂直居中。<b>.navbar-btn</b> 可被使用在 &lt;a&gt; 和 &lt;input&gt; 元素上。</p>
+    <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="#">W3Cschool</a>
+       </div>
+       <div>
+          <form class="navbar-form navbar-left" role="search">
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+             </div>
+             <button type="submit" class="btn btn-default">提交按钮</button>
+          </form>
+          <button type="button" class="btn btn-default navbar-btn">
+             导航栏按钮
+          </button>
+       </div>
+    </nav>
+    <hr>
+    <h3>导航栏中的文本</h3>
+    <p>如果需要在导航中包含文本字符串，请使用 class <b>.navbar-text</b>。这通常与 &lt;p&gt; 标签一起使用，确保适当的前导和颜色。下面的实例演示了这点：</p>
+    <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="#">W3Cschool</a>
+       </div>
+       <div>
+          <p class="navbar-text">Signed in as Thomas</p>
+       </div>
+    </nav>
+    <hr>
+    <h3>非导航链接</h3>
+    <p>如果您不想在常规的导航栏导航组件内使用标准的链接，那么请使用 class <b>navbar-link</b> 来为默认的和倒转的导航栏选项添加适当的颜色，如下面的实例所示：</p>
+    <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="#">W3Cschool</a>
+       </div>
+       <div>
+          <p class="navbar-text navbar-right">Signed in as
+             <a href="#" class="navbar-link">Thomas</a>
+          </p>
+       </div>
+    </nav>
+    <hr>
+    <h3>固定到顶部</h3>
+    <p>Bootstrap 导航栏可以动态定位。默认情况下，它是块级元素，它是基于在 HTML 中放置的位置定位的。通过一些帮助器类，您可以把它放置在页面的顶部或者底部，或者您可以让它成为随着页面一起滚动的静态导航栏。</p>
+    <p>如果您想要让导航栏固定在页面的顶部，请向 <b>.navbar class</b> 添加 class <b>.navbar-fixed-top</b>。</p>
+    <blockquote>为了防止导航栏与页面主体中的其他内容的顶部相交错，请向 &lt;body&gt; 标签添加至少 50 像素的内边距（padding），内边距的值可以根据您的需要进行设置。 </blockquote>
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    </nav>
+    <hr>
+    <h3>固定到底部</h3>
+    <p>如果您想要让导航栏固定在页面的底部，请向 .navbar class 添加 class .navbar-fixed-bottom</p>
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="#">W3Cschool</a>
+       </div>
+       <div>
+          <ul class="nav navbar-nav">
+             <li class="active"><a href="#">iOS</a></li>
+             <li><a href="#">SVN</a></li>
+
+          </ul>
+       </div>
+    </nav>
+    <hr>
+    <h3>静态的顶部</h3>
+    <p>如需创建能随着页面一起滚动的导航栏，请添加 .navbar-static-top class。该 class 不要求向 <body> 添加内边距（padding）</p>
+    <p><a href="nav.html" target="_blank">演示</a></p>
+    <h3>标签式导航</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs">
+           <li class="active"><a href="index.html">首页</a></li>
+           <li><a href="form.html" target="_blank">表单</a></li>
+           <li><a href="table.html" target="_blank">表</a></li>
+           <li><a href="grid.html" target="_blank">栅格</a></li>
+           <li><a href="typography.html" target="_blank">排版</a></li>
+           <li><a href="dropdownMenu.html" target="_blank">下拉菜单</a></li>
+           <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+               实例页面 <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">Swing</a></li>
+               <li><a href="#">jMeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li class="divider"></li>
+               <li><a href="#">分离的链接</a></li>
+            </ul>
+           </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <h3>胶囊式导航</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills">
+           <li class="active"><a href="index.html">首页</a></li>
+           <li><a href="form.html" target="_blank">表单</a></li>
+           <li><a href="table.html" target="_blank">表</a></li>
+           <li><a href="grid.html" target="_blank">栅格</a></li>
+           <li><a href="typography.html" target="_blank">排版</a></li>
+           <li><a href="dropdownMenu.html" target="_blank">下拉菜单</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <h3>垂直的胶囊式导航菜单</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills nav-stacked">
+           <li class="active"><a href="index.html">首页</a></li>
+           <li><a href="form.html" target="_blank">表单</a></li>
+           <li><a href="table.html" target="_blank">表</a></li>
+           <li><a href="grid.html" target="_blank">栅格</a></li>
+           <li><a href="typography.html" target="_blank">排版</a></li>
+           <li><a href="dropdownMenu.html" target="_blank">下拉菜单</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <h3>两端对齐的导航<small>屏幕变窄时会变成垂直的导航</small></h3>
+    <div class="row">
+      <ul class="nav nav-pills nav-justified">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="form.html" target="_blank">表单</a></li>
+        <li><a href="table.html" target="_blank">表</a></li>
+        <li><a href="grid.html" target="_blank">栅格</a></li>
+        <li><a href="typography.html" target="_blank">排版</a></li>
+        <li><a href="dropdownMenu.html" target="_blank">下拉菜单</a></li>
+      </ul><br>
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="form.html" target="_blank">表单</a></li>
+        <li><a href="table.html" target="_blank">表</a></li>
+        <li><a href="grid.html" target="_blank">栅格</a></li>
+        <li><a href="typography.html" target="_blank">排版</a></li>
+        <li><a href="dropdownMenu.html" target="_blank">下拉菜单</a></li>
+      </ul>
+    </div>
+    <hr>
+    <h3>禁用链接</h3>
+    <div class="row">
+      <ul class="nav nav-pills">
+         <li class="active"><a href="#">Home</a></li>
+         <li><a href="#">SVN</a></li>
+         <li class="disabled"><a href="#">iOS（禁用链接）</a></li>
+         <li><a href="#">VB.Net</a></li>
+         <li><a href="#">Java</a></li>
+         <li><a href="#">PHP</a></li>
+      </ul><br>
+      <ul class="nav nav-tabs">
+         <li class="active"><a href="#">Home</a></li>
+         <li><a href="#">SVN</a></li>
+         <li><a href="#">iOS</a></li>
+         <li  class="disabled"><a href="#">VB.Net（禁用链接）</a></li>
+         <li><a href="#">Java</a></li>
+         <li><a href="#">PHP</a></li>
+      </ul>
+    </div>
+    <hr>
+    <h3>下拉菜单</h3>
+    <div class="row">
+      <ul class="nav nav-pills">
+         <li class="active"><a href="#">Home</a></li>
+         <li><a href="#">SVN</a></li>
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+             Java <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+             <li><a href="#">Swing</a></li>
+             <li><a href="#">jMeter</a></li>
+             <li><a href="#">EJB</a></li>
+             <li class="divider"></li>
+             <li><a href="#">分离的链接</a></li>
+          </ul>
+         </li>
+         <li><a href="#">Java</a></li>
+         <li><a href="#">PHP</a></li>
+      </ul><br><br>
+
+      <ul class="nav nav-tabs">
+         <li class="active"><a href="#">Home</a></li>
+         <li><a href="#">SVN</a></li>
+         <li><a href="#">iOS</a></li>
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+             Java <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+             <li><a href="#">Swing</a></li>
+             <li><a href="#">jMeter</a></li>
+             <li><a href="#">EJB</a></li>
+             <li class="divider"></li>
+             <li><a href="#">分离的链接</a></li>
+          </ul>
+         </li>
+         <li><a href="#">PHP</a></li>
+      </ul>
+    </div>
+    <hr>
+
+    <br><br><br><br><br><br><br><br>
+  </div>
+</body>
+</html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script>
+  loadNav('index');
+</script>

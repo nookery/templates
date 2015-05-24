@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,in-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <style type="text/css">
+    body{
+      padding-top: 50px;
+    }</style>
+    <style type="text/css">
+    body{
+      padding-top: 50px;
+    }
+    h3 {
+      color: blue;
+    }
+    h2 {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    </nav>
+    <h2>Bootstrap 模态框（Modal）插件</h2>
+    <h3>用法</h3>
+    <ul class="list"> <li><b>通过 data 属性</b>：在控制器元素（比如按钮或者链接）上设置属性 <b>data-toggle="modal"</b>，同时设置 <b>data-target="#identifier"</b> 或 <b>href="#identifier"</b> 来指定要切换的特定的模态框（带有 id="identifier"）。</li> <li><b>通过 JavaScript</b>：使用这种技术，您可以通过简单的一行 JavaScript 来调用带有 id="identifier" 的模态框： <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">(</span><span class="pln">options</span><span class="pun">)</span></pre></li>
+    </ul>
+    <pre class="prettyprint tryit prettyprinted" style="background-image: none;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;title&gt;</span><span class="pln">Bootstrap 实例 - 模态框（Modal）插件</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/bootstrap/css/bootstrap.min.css"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/scripts/jquery.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/bootstrap/js/bootstrap.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="com">&lt;!-- 按钮触发模态框 --&gt;</span><span class="pln">
+</span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary btn-lg"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"modal"</span><span class="pln">
+   </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#myModal"</span><span class="tag">&gt;</span><span class="pln">
+   开始演示模态框
+</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+
+</span><span class="com">&lt;!-- 模态框（Modal） --&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal fade"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myModal"</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"-1"</span><span class="pln"> </span><span class="atn">role</span><span class="pun">=</span><span class="atv">"dialog"</span><span class="pln">
+   </span><span class="atn">aria-labelledby</span><span class="pun">=</span><span class="atv">"myModalLabel"</span><span class="pln"> </span><span class="atn">aria-hidden</span><span class="pun">=</span><span class="atv">"true"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-dialog"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-content"</span><span class="tag">&gt;</span><span class="pln">
+         </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-header"</span><span class="tag">&gt;</span><span class="pln">
+            </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"close"</span><span class="pln">
+               </span><span class="atn">data-dismiss</span><span class="pun">=</span><span class="atv">"modal"</span><span class="pln"> </span><span class="atn">aria-hidden</span><span class="pun">=</span><span class="atv">"true"</span><span class="tag">&gt;</span><span class="pln">
+                  &amp;times;
+            </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+            </span><span class="tag">&lt;h4</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-title"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myModalLabel"</span><span class="tag">&gt;</span><span class="pln">
+               模态框（Modal）标题
+            </span><span class="tag">&lt;/h4&gt;</span><span class="pln">
+         </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+         </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-body"</span><span class="tag">&gt;</span><span class="pln">
+            在这里添加一些文本
+         </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+         </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"modal-footer"</span><span class="tag">&gt;</span><span class="pln">
+            </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-default"</span><span class="pln">
+               </span><span class="atn">data-dismiss</span><span class="pun">=</span><span class="atv">"modal"</span><span class="tag">&gt;</span><span class="pln">关闭
+            </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+            </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary"</span><span class="tag">&gt;</span><span class="pln">
+               提交更改
+            </span><span class="tag">&lt;/button&gt;</span><span class="pln">
+         </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="com">&lt;!-- /.modal-content --&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="com">&lt;!-- /.modal --&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+    <button class="btn btn-primary btn-lg" data-toggle="modal"
+       data-target="#myModal">
+       开始演示模态框
+    </button>
+    <h3>选项</h3>
+    <table class="reference notranslate table table-bordered"> <tbody><tr><th>选项名称</th><th>类型/默认值</th><th>Data 属性名称</th><th>描述</th></tr> <tr><td>backdrop</td><td>boolean 或 string 'static'<br> <i>默认值：true</i></td><td>data-backdrop</td><td>指定一个静态的背景，当用户点击模态框外部时不会关闭模态框。 </td></tr> <tr><td>keyboard</td><td>boolean<br> <i>默认值：true</i></td><td>data-keyboard</td><td>当按下 escape 键时关闭模态框，设置为 false 时则按键无效。 </td></tr> <tr><td>show</td><td>boolean<br> <i>默认值：true</i></td><td>data-show</td><td>当初始化时显示模态框。</td></tr> <tr><td>remote</td><td>path<br> <i>默认值：false</i></td><td>data-remote</td><td>使用 jQuery <i>.load</i> 方法，为模态框的主体注入内容。如果添加了一个带有有效 URL 的 href，则会加载其中的内容。如下面的实例所示： <pre class="prettyprint prettyprinted" style="white-space: pre-wrap; background-image: none;"><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"modal"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"remote.html"</span><span class="pln"> </span><span class="atn">data-target</span><span class="pun">=</span><span class="atv">"#modal"</span><span class="tag">&gt;</span><span class="pln">请点击我</span><span class="tag">&lt;/a&gt;</span></pre></td></tr> </tbody></table>
+    <h3>方法</h3>
+    <table class="reference notranslate table table-bordered"> <tbody><tr><th>方法</th><th>描述</th><th>实例</th></tr> <tr><td><b>Options:</b> .modal(options)</td><td>把内容作为模态框激活。接受一个可选的选项对象。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">({</span><span class="pln">
+    keyboard</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln">
+    </span><span class="pun">})</span></pre></td></tr> <tr><td><b>Toggle:</b> .modal('toggle')</td><td>手动切换模态框。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">(</span><span class="str">'toggle'</span><span class="pun">)</span></pre></td></tr> <tr><td><b>Show:</b> .modal('show')</td><td>手动打开模态框。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">(</span><span class="str">'show'</span><span class="pun">)</span></pre></td></tr> <tr><td><b>Hide:</b> .modal('hide')</td><td>手动隐藏模态框。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">modal</span><span class="pun">(</span><span class="str">'hide'</span><span class="pun">)</span></pre></td></tr> </tbody></table>
+    <h3>事件</h3>
+    <table class="reference notranslate table-bordered"> <tbody><tr><th>事件</th><th>描述</th><th>实例</th></tr> <tr><td>show.bs.modal</td><td>在调用 show 方法后触发。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'show.bs.modal'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// 执行一些动作...</span><span class="pln">
+    </span><span class="pun">})</span></pre></td></tr> <tr><td>shown.bs.modal</td><td>当模态框对用户可见时触发（将等待 CSS 过渡效果完成）。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'shown.bs.modal'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">// 执行一些动作...</span><span class="pln">
+    </span><span class="pun">})</span></pre></td></tr> <tr><td>hide.bs.modal</td><td>当调用 hide 实例方法时触发。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'hide.bs.modal'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">// 执行一些动作...</span><span class="pln">
+    </span><span class="pun">})</span></pre></td></tr> <tr><td>hidden.bs.modal</td><td>当模态框完全对用户隐藏时触发。</td><td> <pre class="prettyprint prettyprinted" style="background-image: none;"><span class="pln">$</span><span class="pun">(</span><span class="str">'#identifier'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'hidden.bs.modal'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">// 执行一些动作...</span><span class="pln">
+    </span><span class="pun">})</span></pre></td></tr> </tbody></table>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+              <button type="button" class="close"
+                 data-dismiss="modal" aria-hidden="true">
+                    &times;
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                 模态框（Modal）标题
+              </h4>
+           </div>
+           <div class="modal-body">
+              在这里添加一些文本
+           </div>
+           <div class="modal-footer">
+              <button type="button" class="btn btn-default"
+                 data-dismiss="modal">关闭
+              </button>
+              <button type="button" class="btn btn-primary">
+                 提交更改
+              </button>
+           </div>
+        </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+  <script src="assets/js/demo.js"></script>
+  <script>
+    loadNav('javascriptsList');
+  </script>
+</body>
+</html>
