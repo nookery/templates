@@ -27,6 +27,7 @@ function loadNav(tab) {
                     '<li><a href="examples/login.html" target="_blank">登录</a></li>'+
                     '<li><a href="examples/login2.html" target="_blank">登录2</a></li>'+
                     '<li><a href="examples/admin.html" target="_blank">后台管理</a></li>'+
+                    '<li><a href="examples/admin2.html" target="_blank">后台管理2</a></li>'+
                     '<li><a href="examples/modal.html" target="_blank">modal</a></li>'+
                     '<li><a href="#">EJB</a></li>'+
                     '<li class="divider"></li>'+
